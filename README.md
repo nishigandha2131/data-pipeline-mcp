@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-# duckdb-pipeline-mcp
-An MCP server that connects Claude to DuckDB for data pipeline analytics — schema profiling, data quality checks, and pipeline health monitoring
-=======
-## data-pipeline-mcp
+# data-pipeline-mcp
 
 An MCP (Model Context Protocol) **stdio** server that lets any MCP client (e.g. Cursor, Claude Desktop) explore pipeline data in **DuckDB** (local demo file) or **BigQuery** (your project), with the same tools routed by a `backend` parameter.
 
@@ -226,4 +222,3 @@ Then drill in with:
 - `run_readonly_query("select * from pipeline_runs where ended_at is null")`
 - `run_readonly_query("select metric_name, unit, count(*) from pipeline_metrics group by 1,2 order by 3 desc")`
 
->>>>>>> 611dd7d (Add MCP server for DuckDB and BigQuery pipelines)
