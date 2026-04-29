@@ -1,0 +1,13 @@
+[project]
+name = "data-pipeline-mcp"
+version = "0.1.0"
+description = "MCP server for read-only pipeline analytics on DuckDB and BigQuery"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "duckdb>=1.5.2",
+    "fastmcp>=3.2.4",
+    "google-cloud-bigquery>=3.27.0",
+    "mcp[cli]>=1.27.0",
+    "pyyaml>=6.0.2",
+]

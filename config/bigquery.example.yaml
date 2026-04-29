@@ -1,0 +1,39 @@
+# Copy to config/bigquery.local.yaml and fill in real values.
+# Never commit credentials or bigquery.local.yaml.
+#
+# ADC (Application Default Credentials)
+# --------------------------------------
+# "adc" means: the Google client libraries read credentials from your machine’s
+# default location (on macOS/Linux, typically after you run:
+#   gcloud auth application-default login
+# the file is ~/.config/gcloud/application_default_credentials.json).
+# No JSON key file is used — good when your org blocks service account keys.
+#
+# If you saw a warning about “quota project”, set it once:
+#   gcloud auth application-default set-quota-project YOUR_PROJECT_ID
+
+project_id: "project-35b3d5c4-7af8-48c5-a97"
+
+# Optional BigQuery job / client location (e.g. US, EU). Omit if not needed.
+location: 'us-central1'
+
+# Dataset used when tools pass an unqualified table name like "pipeline_runs",
+# and for list_tables() (lists tables in this dataset).
+default_dataset: "testing-dataset"
+
+# Optional per-logical-table overrides (fully-qualified project.dataset.table).
+# Use null to mean: {project_id}.{default_dataset}.{logical_name}
+tables:
+  pipeline_runs: null
+  pipeline_metrics: null
+  data_quality_log: null
+
+# Cap query bytes billed per job.
+# Omit the key for a 5 GiB default; set to null for no cap (not recommended).
+maximum_bytes_billed: 5368709120
+
+auth:
+  # adc: Application Default Credentials (recommended for local dev; see header above).
+  # service_account: JSON key path — often blocked by org policy (iam.disableServiceAccountKeyCreation).
+  mode: "adc"
+  credentials_path: null

@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "data-pipeline-mcp": {
+      "command": "uv",
+      "args": ["run", "server.py"],
+      "env": {
+        "DB_PATH": "pipeline_demo.duckdb",
+        "BQ_CONFIG_PATH": "config/bigquery.local.yaml"
+      }
+    }
+  }
+}
